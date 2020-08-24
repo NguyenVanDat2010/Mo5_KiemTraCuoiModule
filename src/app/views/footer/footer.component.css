@@ -1,94 +1,41 @@
-.header-font {
-  font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: #fd1506;
-}
-.fa-facebook{
-    color:#3b5998;
-}
-.fa-linkedin{
-    color:#0077B5;
-}
-.fa-twitter{
-    color:#4099FF;
-}
-.fa-google{
-    color:#d34836;
-}
-.bg-primary {
- background-color: #000 !important;
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+#footer {
+    border-top: 5px solid #CDB380;
+    background: #033649 none repeat scroll 0% 0%;
+    padding-top: 30px;
+    margin-top: 60px;
+    clear: both;
+    color: #AAA;
+    display: block;
 }
 
-.bg-circle
-{
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  padding: 14px 4px;
-  color: #ececec;
-  text-align: center;
-  border-radius: 50%;
+#footer .widgettitle {
+    margin: 0px;
+    padding: 0px 0px 15px;
+    border-bottom: medium none;
+}
+#footer h4 {
+    color: #FFF;
 }
 
-.bg-circle-outline
-{
-  width: 50px;
-  height: 50px;
-  color:smoke;
-  padding: 8px 2px;
-  border: 2px solid;
-  border-color: smoke;
-  border-radius: 50%;
+#footer ul {
+    list-style: outside none none;
 }
 
+#footer li {
+    padding: 7px 0px;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+    margin: 0px;
+}
 
-.bg-circle a, a:hover, .media a:focus
-{
-  text-decoration: none !important;
-  outline: none;
-  color: #ececec;
+#footer li a {
+    color: #DDD;
 }
-.bg-circle-outline a, a:hover, .media a:focus
-{
-  text-decoration: none !important;
-  outline: none;
-  color: #ececec;
+
+#sub-floor {
+    color: #AAA;
+    background: #031634 none repeat scroll 0% 0%;
+    padding: 10px 0px;
 }
-.footer {
-	background: #EDEFF1;
-	height: auto;
-	padding-bottom: 30px;
-	position: relative;
-	width: 100%;
-	border-bottom: 1px solid #CCCCCC;
-	border-top: 1px solid #DDDDDD;
-}
-.footer p {
-	margin: 0;
-}
-.footer img {
-	max-width: 100%;
-}
-.footer h3 {
-	border-bottom: 1px solid #BAC1C8;
-	color: #54697E;
-	font-size: 18px;
-	font-weight: 600;
-	line-height: 27px;
-	padding: 40px 0 10px;
-	text-transform: uppercase;
-}
-.footer ul {
-	font-size: 13px;
-	list-style-type: none;
-	margin-left: 0;
-	padding-left: 0;
-	margin-top: 15px;
-	color: #7F8C8D;
-}
-.footer ul li a {
-	padding: 0 0 5px 0;
-	display: block;
-}
-.footer a {
-	color: #78828D
-}
+

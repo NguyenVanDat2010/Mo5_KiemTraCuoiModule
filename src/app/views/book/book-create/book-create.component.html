@@ -1,1 +1,34 @@
-<p>book-create works!</p>
+<p>Thêm mới sách!</p>
+<div>
+  <form [formGroup]="createBookForm" (ngSubmit)="createNewBook()">
+    <div class="form-group">
+      <label>Tên</label>
+      <input title="text" class="form-control" formControlName="title" placeholder="Title" autofocus>
+      <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+        <div *ngIf="title.errors.required">
+          Title is required!
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Tác giả</label>
+      <input title="text" class="form-control" formControlName="author" placeholder="Author">
+      <div *ngIf="author.invalid && (author.dirty || author.touched)" class="alert alert-danger">
+        <div *ngIf="author.errors.required">
+          Author is required!
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Mô tả</label>
+      <textarea class="form-control" formControlName="description" placeholder="Description"></textarea>
+      <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+        <div *ngIf="description.errors.required">
+          Description is required!
+        </div>
+      </div>
+    </div>
+    <button style="margin: 5px;" class="btn btn-square btn-primary btn-sm" type="submit" [disabled]="createBookForm.invalid">Thêm mới</button>
+    <button class="btn btn-square btn-secondary btn-sm" routerLink="/books">Thoát</button>
+  </form>
+</div>

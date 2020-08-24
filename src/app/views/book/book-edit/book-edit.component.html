@@ -1,1 +1,31 @@
-<p>book-edit works!</p>
+<form [formGroup]="editBookForm" (ngSubmit)="editBookById()">
+  <div class="form-group">
+    <label>Tên</label>
+    <input class="form-control" formControlName="title" type="text"  >
+    <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+      <div *ngIf="title.errors.required">
+        Title is required!
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Tác giả</label>
+    <input class="form-control" formControlName="author" type="text"  >
+    <div *ngIf="author.invalid && (author.dirty || author.touched)" class="alert alert-danger">
+      <div *ngIf="author.errors.required">
+        Author is required!
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Mô tả</label>
+    <textarea class="form-control" formControlName="description" ></textarea>
+    <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+      <div *ngIf="description.errors.required">
+        Description is required!
+      </div>
+    </div>
+  </div>
+  <button style="margin: 5px;" class="btn btn-square btn-primary btn-sm" type="submit" [disabled]="editBookForm.invalid">Cập nhật</button>
+  <button class="btn btn-square btn-secondary btn-sm" routerLink="/books">Thoát</button>
+</form>
