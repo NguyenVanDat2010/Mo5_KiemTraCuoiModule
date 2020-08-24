@@ -1,3 +1,4 @@
+<h4>Chỉnh sửa</h4>
 <form [formGroup]="editBookForm" (ngSubmit)="editBookById()">
   <div class="form-group">
     <label>Tên</label>
@@ -26,6 +27,6 @@
       </div>
     </div>
   </div>
-  <button style="margin: 5px;" class="btn btn-square btn-primary btn-sm" type="submit" [disabled]="editBookForm.invalid">Cập nhật</button>
+  <button style="margin: 5px;" class="btn btn-square btn-success btn-sm" type="submit" [disabled]="editBookForm.invalid">Cập nhật</button>
   <button class="btn btn-square btn-secondary btn-sm" routerLink="/books">Thoát</button>
 </form>

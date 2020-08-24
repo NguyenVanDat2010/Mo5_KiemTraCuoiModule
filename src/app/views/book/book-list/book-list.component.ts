@@ -10,8 +10,7 @@ import { BookService } from 'src/app/containers/services/book/book.service';
 export class BookListComponent implements OnInit {
   bookList: Book[] = [];
   bookLength: number;
-  key;
-  // books: any;
+  key = '';
 
   constructor(private bookService: BookService) { }
 
@@ -40,20 +39,19 @@ export class BookListComponent implements OnInit {
   }
 
   search(): any {
-    if(this.key == null) return this.bookList;
-      return this.bookList.filter(function(book){
-        return book.title.toLowerCase().indexOf(this.key.toLowerCase()) > -1;
-      })
+    let foundBooks = [];
+    for (let i = 0; i < this.bookList.length; i++) {
+      if (this.bookList[i].title.toLowerCase().includes(this.key.toLowerCase())) {
+        foundBooks.push(this.bookList[i])
+      }
+    }
+
+    if (this.key != '') {
+      this.bookList = foundBooks
+      this.bookLength = this.bookList.length;
+    } else
+      this.getAllBooks()
   }
 
-  searchBook = () => {
-
-    // this.bookList.find(key =>{
-    //   if(key === this.key){
-    //     this.books.push(key);
-    //     console.log(this.books.length);
-    //   }
-    // })
-  }
 
 }

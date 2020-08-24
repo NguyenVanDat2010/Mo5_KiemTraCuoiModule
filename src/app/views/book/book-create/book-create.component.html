@@ -1,4 +1,4 @@
-<p>Thêm mới sách!</p>
+<h4>Thêm mới sách!</h4>
 <div>
   <form [formGroup]="createBookForm" (ngSubmit)="createNewBook()">
     <div class="form-group">
@@ -6,7 +6,7 @@
       <input title="text" class="form-control" formControlName="title" placeholder="Title" autofocus>
       <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
         <div *ngIf="title.errors.required">
-          Title is required!
+          Title is required
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <button style="margin: 5px;" class="btn btn-square btn-primary btn-sm" type="submit" [disabled]="createBookForm.invalid">Thêm mới</button>
+    <button style="margin: 5px;" class="btn btn-square btn-success btn-sm" type="submit" [disabled]="createBookForm.invalid">Thêm mới</button>
     <button class="btn btn-square btn-secondary btn-sm" routerLink="/books">Thoát</button>
   </form>
 </div>
