@@ -1,8 +1,8 @@
 <!-- Search form -->
 <div class="md-form mt-0">
-  <input class="form-control" type="text" placeholder="Search" aria-label="Search" [(ngModel)]='key'>
+  <input class="form-control" type="text" placeholder="Search" aria-label="Search" [(ngModel)]='key' (ngModelChange)='search()'>
 </div>
-
+<br><br>
 <div>
   <p style="float: left;"> Có <span>{{bookLength}}</span> cuốn sách</p>
   <button style="margin: 5px; float: right;" class="btn btn-square btn-primary btn-sm" routerLink="/books/create">Thêm mới sách</button>

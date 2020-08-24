@@ -11,12 +11,14 @@ export class BookListComponent implements OnInit {
   bookList: Book[] = [];
   bookLength: number;
   key;
-  books: any;
+  // books: any;
 
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
     this.getAllBooks();
+    console.log(this.key);
+
   }
 
   getAllBooks = () => {
@@ -37,19 +39,21 @@ export class BookListComponent implements OnInit {
     }
   }
 
-  searchBook = () =>{
-    // for(let i = 0; i<this.bookList.length;i++){
-    //   if(this.bookList[i].includes()){
+  search(): any {
+    if(this.key == null) return this.bookList;
+      return this.bookList.filter(function(book){
+        return book.title.toLowerCase().indexOf(this.key.toLowerCase()) > -1;
+      })
+  }
 
+  searchBook = () => {
+
+    // this.bookList.find(key =>{
+    //   if(key === this.key){
+    //     this.books.push(key);
+    //     console.log(this.books.length);
     //   }
-    // }
-    this.bookList.find(key =>{
-      if(key === this.key){
-        this.books.push(key);
-        console.log(this.books);
-
-      }
-    })
+    // })
   }
 
 }
